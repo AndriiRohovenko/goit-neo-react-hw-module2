@@ -52,13 +52,15 @@ function App() {
     <>
       <Description />
       <Options buttonHandler={updateFeedback} totalData={totalFeedback} />
-      <Feedback
-        goodF={feedback.good}
-        neutralF={feedback.neutral}
-        badF={feedback.bad}
-        totalData={totalFeedback}
-        positiveData={positiveFeedback}
-      />
+      {totalFeedback > 0 && (
+        <Feedback
+          goodF={feedback.good}
+          neutralF={feedback.neutral}
+          badF={feedback.bad}
+          totalData={totalFeedback}
+          positiveData={positiveFeedback}
+        />
+      )}
       <Notification totalData={totalFeedback} />
     </>
   );
