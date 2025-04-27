@@ -1,6 +1,6 @@
 import './Feedback.module.css';
 
-function Feedback({ goodF, neutralF, badF, totalData }) {
+function Feedback({ goodF, neutralF, badF, totalData, positiveData }) {
   console.log('hello from Feedback');
   return (
     <>
@@ -21,6 +21,10 @@ function Feedback({ goodF, neutralF, badF, totalData }) {
           <p>
             Total:
             <span>{totalData}</span>
+          </p>
+          <p>
+            Total:
+            <span>{positiveData}</span>
           </p>
         </div>
       )}

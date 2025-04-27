@@ -15,6 +15,8 @@ function App() {
   };
   const [feedback, setFeedback] = useState(defaultFeedback);
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  const positiveFeedback =
+    String(Math.round((feedback.good / totalFeedback) * 100)) + '%';
 
   function updateFeedback(feedbackType) {
     if (feedbackType === 'reset') {
@@ -36,6 +38,7 @@ function App() {
         neutralF={feedback.neutral}
         badF={feedback.bad}
         totalData={totalFeedback}
+        positiveData={positiveFeedback}
       />
       <Notification totalData={totalFeedback} />
     </>
