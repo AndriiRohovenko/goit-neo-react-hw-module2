@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.module.css';
 
@@ -13,7 +13,13 @@ function App() {
     neutral: 0,
     bad: 0,
   };
-  const [feedback, setFeedback] = useState(defaultFeedback);
+
+  function handleLSDataSaving() {
+    const savedFeedback = localStorage.getItem('feedback');
+    return savedFeedback ? JSON.parse(savedFeedback) : defaultFeedback;
+  }
+
+  const [feedback, setFeedback] = useState(handleLSDataSaving);
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const positiveFeedback =
     String(Math.round((feedback.good / totalFeedback) * 100)) + '%';
@@ -28,6 +34,10 @@ function App() {
       }));
     }
   }
+
+  useEffect(() => {
+    localStorage.setItem('feedback', JSON.stringify(feedback));
+  }, [feedback]);
 
   return (
     <>
