@@ -73,10 +73,11 @@ ul {
 :root {
   font-family: Arial, sans-serif;
   /* background-color: grey; */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   padding: 20px;
   height: 100vh;
   margin: 0;
+}
+
+button {
+  max-width: 100px;
 }

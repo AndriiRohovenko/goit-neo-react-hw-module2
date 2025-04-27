@@ -1,13 +1,15 @@
-import './Option.module.css';
+import styles from './Option.module.css';
 
-function Options() {
+function Options({ buttonHandler }) {
   console.log('hello from options');
   return (
     <>
-      <button>Good</button>
-      <button>Neutral</button>
-      <button>Bad</button>
-      <button>Reset</button>
+      <div className={styles.OptionsWrapper}>
+        <button onClick={() => buttonHandler('good')}>Good</button>
+        <button onClick={() => buttonHandler('neutral')}>Neutral</button>
+        <button onClick={() => buttonHandler('bad')}>Bad</button>
+        <button onClick={() => buttonHandler('reset')}>Reset</button>
+      </div>
     </>
   );
 }

@@ -1,0 +1,13 @@
+.OptionsWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.OptionsWrapper button {
+  width: 100px;
+}
+
+.OptionsWrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

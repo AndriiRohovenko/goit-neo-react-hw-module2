@@ -1,29 +1,31 @@
 import './Feedback.module.css';
 
-function Feedback() {
+function Feedback({ goodF, neutralF, badF, totalData }) {
   console.log('hello from Feedback');
   return (
     <>
       <p>
         Good:
-        <span>data</span>
+        <span>{goodF}</span>
       </p>
       <p>
         Neutral:
-        <span>data</span>
+        <span>{neutralF}</span>
       </p>
       <p>
         Bad:
-        <span>data</span>
+        <span>{badF}</span>
       </p>
-      <p>
-        Total:
-        <span>data</span>
-      </p>
-      <p>
+      {totalData > 0 && (
+        <p>
+          Total:
+          <span>{totalData}</span>
+        </p>
+      )}
+      {/* <p>
         Positive:
         <span>data</span>
-      </p>
+      </p> */}
     </>
   );
 }
