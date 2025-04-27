@@ -14,12 +14,21 @@ function App() {
     bad: 0,
   };
 
-  function handleLSDataSaving() {
-    const savedFeedback = localStorage.getItem('feedback');
-    return savedFeedback ? JSON.parse(savedFeedback) : defaultFeedback;
+  function handleLSData() {
+    try {
+      const savedFeedback = localStorage.getItem('feedback');
+      if (savedFeedback) {
+        return JSON.parse(savedFeedback);
+      } else {
+        return defaultFeedback;
+      }
+    } catch (error) {
+      console.error('Error retrieving feedback from localStorage:', error);
+      return defaultFeedback;
+    }
   }
 
-  const [feedback, setFeedback] = useState(handleLSDataSaving);
+  const [feedback, setFeedback] = useState(handleLSData);
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const positiveFeedback =
     String(Math.round((feedback.good / totalFeedback) * 100)) + '%';

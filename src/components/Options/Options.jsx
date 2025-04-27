@@ -1,7 +1,6 @@
 import styles from './Option.module.css';
 
 function Options({ buttonHandler, totalData }) {
-  console.log('hello from options');
   return (
     <>
       <div className={styles.OptionsWrapper}>

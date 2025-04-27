@@ -1,7 +1,6 @@
 import './Feedback.module.css';
 
 function Feedback({ goodF, neutralF, badF, totalData, positiveData }) {
-  console.log('hello from Feedback');
   return (
     <>
       {totalData > 0 && (
