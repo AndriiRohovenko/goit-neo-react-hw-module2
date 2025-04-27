@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Description />
-      <Feedback />
       <Options />
+      <Feedback />
     </>
   );
 }
