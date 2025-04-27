@@ -61,7 +61,7 @@ function App() {
           positiveData={positiveFeedback}
         />
       )}
-      <Notification totalData={totalFeedback} />
+      {totalFeedback === 0 && <Notification />}
     </>
   );
 }
