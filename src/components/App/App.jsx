@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <Description />
-      <Options buttonHandler={updateFeedback} />
+      <Options buttonHandler={updateFeedback} totalData={totalFeedback} />
       <Feedback
         goodF={feedback.good}
         neutralF={feedback.neutral}

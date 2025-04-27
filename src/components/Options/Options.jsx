@@ -1,6 +1,6 @@
 import styles from './Option.module.css';
 
-function Options({ buttonHandler }) {
+function Options({ buttonHandler, totalData }) {
   console.log('hello from options');
   return (
     <>
@@ -8,7 +8,9 @@ function Options({ buttonHandler }) {
         <button onClick={() => buttonHandler('good')}>Good</button>
         <button onClick={() => buttonHandler('neutral')}>Neutral</button>
         <button onClick={() => buttonHandler('bad')}>Bad</button>
-        <button onClick={() => buttonHandler('reset')}>Reset</button>
+        {totalData > 0 && (
+          <button onClick={() => buttonHandler('reset')}>Reset</button>
+        )}
       </div>
     </>
   );
